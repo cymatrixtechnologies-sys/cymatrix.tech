@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | CYMATRIX TECHNOLOGIES</title>
+
+    <meta name="description" content="Impressum von CYMATRIX TECHNOLOGIES – Tobias Skubski, Kleinunternehmer nach § 19 UStG.">
+    <meta name="robots" content="index,follow">
+
+    <link rel="icon" type="image/png" href="https://cymatrix.tech/media/cymatrix_logo.png">
+
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.6;
+            color: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000000;
+        }
+
+        .frame {
+            border-radius: 15px;
+            border: 2px solid #39FF14;
+            box-shadow: 0 0 20px #39FF14, inset 0 0 10px #39FF14;
+            padding: 2.5rem 1.8rem;
+            margin-top: 30px;
+            background: rgba(57, 255, 20, 0.05);
+            backdrop-filter: blur(10px); /* Der Blaufilter/Blur-Effekt */
+        }
+
+        h1 {
+            text-align: center;
+            color: #39FF14;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px #39FF14;
+            letter-spacing: 4px;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            color: #39FF14;
+            border-bottom: 2px solid #39FF14;
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 5px #39FF14;
+        }
+
+        p { margin: 0.3rem 0; }
+        a { color: #39FF14; text-decoration: none; }
+        a:hover { color: #ffffff; text-shadow: 0 0 8px #ffffff; }
+        .back-link { margin-top: 40px; text-align: center; }
+
+        /* English Info Banner Style */
+        #info-banner {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(5,5,5,0.95); border: 2px solid #39FF14; padding: 15px 25px;
+            border-radius: 10px; z-index: 9999; display: none; align-items: center; gap: 15px;
+            box-shadow: 0 0 30px #39FF14; backdrop-filter: blur(10px);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="frame">
+    <h1>Impressum</h1>
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>CYMATRIX TECHNOLOGIES</p>
+    <p>Tobias Skubski</p>
+    <p>Schulstrasse 13</p>
+    <p>67714 Waldfischbach-Burgalben</p>
+    <p>Deutschland</p>
+
+    <h2>Kontakt</h2>
+    <p>Telefon: 06333/9281385</p>
+    <p>E-Mail: <a href="mailto:contact@cymatrix.tech">contact@cymatrix.tech</a></p>
+
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>Tobias Skubski</p>
+    <p>Anschrift wie oben</p>
+
+    <h2>Kleinunternehmerregelung</h2>
+    <p>
+        Hinweis nach § 19 UStG: Es wird keine Umsatzsteuer ausgewiesen, 
+        da der Betreiber dieser Website als Kleinunternehmer gemäß § 19 UStG tätig ist.
+    </p>
+
+    <h2>Streitbeilegung</h2>
+    <p>
+        Plattform der EU-Kommission zur Online-Streitbeilegung (OS): 
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>
+    </p>
+    <p>
+        Ich bin weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer 
+        Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+
+    <div class="back-link">
+        <p><a href="index.html" style="border: 1px solid #39FF14; padding: 10px 20px;">&lt;&lt; BACK_TO_SYSTEM</a></p>
+    </div>
+</div>
+
+<div id="info-banner">
+    <span style="color: #39FF14; font-weight: bold;">[INFO]</span>
+    <span style="font-size: 0.85rem; color: #fff;">This website <strong>does not use cookies</strong>.</span>
+    <button onclick="closeBanner()" style="background: #39FF14; border: none; padding: 5px 15px; cursor: pointer; font-weight: bold; font-family: 'Courier New', monospace;">OK</button>
+</div>
+
+<script>
+    function closeBanner() {
+        document.getElementById('info-banner').style.display = 'none';
+        // Wir nutzen LocalStorage statt Cookies!
+        localStorage.setItem("cym_legal_banner_hide", "true");
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (localStorage.getItem("cym_legal_banner_hide") !== "true") {
+            document.getElementById('info-banner').style.display = 'flex';
+        }
+    });
+</script>
+
+</body>
+</html>
